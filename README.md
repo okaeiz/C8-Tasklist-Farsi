@@ -1,6 +1,6 @@
 # C8-Tasklist-Farsi
 
-![Logo](./public/c8tf-logo.png)
+![Logo](https://github.com/okaeiz/C8-Tasklist-Farsi/blob/main/packages/taskapp-web/public/c8tf-logo.png)
 ![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)
 [![EN](https://img.shields.io/badge/lang-EN-blue.svg)](README.md)
 [![FA](https://img.shields.io/badge/lang-FA-green.svg)](README.fa.md)

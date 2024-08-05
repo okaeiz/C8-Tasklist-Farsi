@@ -53,7 +53,7 @@ docker-compose up -d
 
 This will build and start all services defined in the docker-compose.yml file.
 <br /> 4. Access the application:
-Once all services are up and running, you can access the web application at http://localhost:3000 (or the port specified in your Docker Compose configuration).
+Once all services are up and running, you can access the web application at <http://localhost:3000> (or the port specified in your Docker Compose configuration).
 
 ## Development 💻
 

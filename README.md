@@ -92,7 +92,7 @@ The project is currently in development. Users may encounter issues when attempt
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-## 📄 License
+## License 📄
 
 This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
@@ -125,6 +125,6 @@ For more detailed troubleshooting, please refer to the logs of individual servic
 docker-compose logs [service-name]
 ```
 
-## Contact
+## Contact 📱
 
 Since this project is currently in the early stages of development, you may (and will) encounter issues. For any queries or support, please open an issue in the GitHub repository.

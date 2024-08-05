@@ -51,10 +51,10 @@ This project is structured as a monorepo containing the following components:
    <br />
 3. Build and start the services using Docker Compose:
 
-```bash
-docker-compose build
-docker-compose up -d
-```
+    ```bash
+    docker-compose build
+    docker-compose up -d
+    ```
 
 This will build and start all services defined in the docker-compose.yml file.
 <br /> 4. Access the application:
@@ -66,21 +66,21 @@ To work on individual packages:
 
 1. Navigate to the package directory:
 
-```bash
-cd packages/taskapp-web
-```
+    ```bash
+    cd packages/taskapp-web
+    ```
 
 2. Install dependencies:
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 3. Start the development server:
 
-```bash
-npm start
-```
+    ```bash
+    npm start
+    ```
 
 Repeat these steps for other packages as needed.
 

@@ -1,0 +1,50 @@
+{
+  "tasks": {
+    "title": "Tasks",
+    "description": "Manage your tasks here"
+  },
+  "processes": {
+    "title": "Processes",
+    "description": "View and manage processes"
+  },
+  "info": {
+    "title": "Info",
+    "description": "Get information about the application",
+    "information": {
+      "title": "Information",
+      "description": "The Info panel offers quick access to essential Camunda resources and community support."
+    },
+    "documentation": {
+      "title": "Documentation",
+      "description": "Orchestrate complex process flows, automate across people, systems, and devices, and transform your organization.",
+      "link": "Learn more!"
+    },
+    "academy": {
+      "title": "Camunda Academy",
+      "description": "Take a look at Camunda Academy tutorials.",
+      "link": "Learn more!"
+    },
+    "feedback": {
+      "title": "Feedback and Support",
+      "description": "Community discussion on Camunda, including business process management and process automation.",
+      "link": "Learn more!"
+    },
+    "slack": {
+      "title": "Slack Community Channel",
+      "description": "Follow us on Slack!"
+    }
+  },
+  "login": {
+    "title": "Login to Your Camunda Account",
+    "username": "Username",
+    "password": "Password",
+    "submit": "Submit",
+    "forgot": "FORGOT PASSWORD"
+  },
+  "settings": {
+    "title": "Settings",
+    "interfaceLanguage": "Interface Language",
+    "persian": "Persian",
+    "english": "English"
+  }
+}

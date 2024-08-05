@@ -1,0 +1,26 @@
+version: '3'
+services:
+  taskapp-web:
+    build: ./packages/taskapp-web
+    ports:
+      - "3000:3000"
+
+  keycloak-proxy:
+    build: ./packages/keycloak-proxy
+    ports:
+      - "3001:3001"
+
+  processes-server:
+    build: ./packages/processes-server
+    ports:
+      - "3002:3002"
+
+  tasks-server:
+    build: ./packages/tasks-server
+    ports:
+      - "3003:3003"
+
+  zeebe-backend:
+    build: ./packages/zeebe-backend
+    ports:
+      - "3005:3005"

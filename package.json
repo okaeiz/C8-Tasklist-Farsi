@@ -1,0 +1,16 @@
+{
+  "name": "C8-Tasklist-Farsi",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "docker-compose up",
+    "stop": "docker-compose down",
+    "build": "docker-compose build"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

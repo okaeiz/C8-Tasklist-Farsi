@@ -1,0 +1,6 @@
+# Specific ignores
+packages/taskapp-web/.env
+packages/zeebe-backend/.env
+packages/keycloak-proxy/.env
+packages/tasks-server/.env
+packages/processes-server/.env

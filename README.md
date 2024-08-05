@@ -1,6 +1,6 @@
 # C8-Tasklist-Farsi
 
-![Logo](./packages/taskapp-web/public/c8tf-logo.png)
+![Logo](./public/c8tf-logo.png)
 
 C8-Tasklist-Farsi is a custom implementation of a task list application for Camunda 8, with support for Right-to-Left (RTL) languages, specifically Persian (Farsi). It provides a web interface for managing tasks and processes, integrating with Camunda 8's Zeebe engine.
 

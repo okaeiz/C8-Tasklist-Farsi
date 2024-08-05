@@ -7,8 +7,7 @@ import { styled } from "@mui/material/styles";
 import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
-import Header from "./header";
-import background from "../assets/asfalt-dark.png";
+import logo from "../assets/c8tf-logo.png";
 
 const Login = ({ t, setAuthenticated }) => {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -37,7 +36,6 @@ const Login = ({ t, setAuthenticated }) => {
     };
 
     try {
-      console.log("Sending login request with data:", data);
       const response = await axios.request(config);
       console.log("Response received:", response.data);
 
@@ -59,24 +57,22 @@ const Login = ({ t, setAuthenticated }) => {
   };
 
   return (
-    <Grid
-      container
-      justifyContent="center"
-      sx={{
-        backgroundImage: `url(${background})`,
-      }}
-    >
+    <Grid container justifyContent="center">
+      <Box sx={{ mt: 8, width: "100%" }}>
+        <img src={logo} alt="Logo" style={{ mt: 8, width: "80px" }} />
+      </Box>
       <Box sx={{ mt: 8, width: "100%" }}>
         <Card
           sx={{
             padding: 4,
-            width: { xs: "100%", sm: "60%", md: "40%" },
+            width: { xs: "100%", sm: "60%", md: "30%" },
             margin: "auto",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             height: "max-content",
+            opacity: "75%",
           }}
         >
           <StyledTypography variant="h6" gutterBottom>

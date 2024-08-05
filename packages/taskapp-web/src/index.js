@@ -6,6 +6,8 @@ import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { I18nextProvider } from "react-i18next";
+import i18n from "./i18n";
 
 const theme = createTheme({
   mixins: {
@@ -20,7 +22,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <I18nextProvider i18n={i18n}>
+          <App />
+        </I18nextProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>

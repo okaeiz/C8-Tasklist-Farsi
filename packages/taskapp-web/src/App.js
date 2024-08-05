@@ -11,7 +11,7 @@ import background from "./assets/asfalt-dark.png";
 import i18n from "./i18n";
 import Settings from "./components/settings";
 import Home from "./pages/Home";
-import NotFound from "./pages/NotFound"; // A 404 page component
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -21,24 +21,15 @@ export default function App() {
 
   return (
     <div className="App">
-      {/* Header component, always visible */}
-      <Header />
-
-      {/* Main content area */}
-      <main
-        style={{
-          minHeight: "100vh", // Ensures footer stays at the bottom
-          background: `url(${background}) no-repeat center center fixed`, // Adjust background styles as needed
-          // backgroundSize: "",
-        }}
-      >
+      {authenticated && <Header />}
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
             path="/login"
             element={
               authenticated ? (
-                <Navigate to="/tasks" replace />
+                <Navigate to="/home" replace />
               ) : (
                 <Login setAuthenticated={setAuthenticated} />
               )
@@ -57,9 +48,6 @@ export default function App() {
           {/* Catch-all route for 404 */}
         </Routes>
       </main>
-
-      {/* Footer component, always visible */}
-      {/* <Footer /> */}
     </div>
   );
 }

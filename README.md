@@ -47,6 +47,7 @@ This project is structured as a monorepo containing the following components:
    ```
 
 2. Create `.env` files:
+   
    Create a `.env` file in each package directory (`packages/taskapp-web`, `packages/zeebe-backend`, etc.) and populate them with the necessary environment variables. Refer to `.env.example` files in each component for required variables.
    <br />
 3. Build and start the services using Docker Compose:
@@ -56,9 +57,10 @@ This project is structured as a monorepo containing the following components:
     docker-compose up -d
     ```
 
-This will build and start all services defined in the docker-compose.yml file.
-<br /> 4. Access the application:
-Once all services are up and running, you can access the web application at <http://localhost:3000> (or the port specified in your Docker Compose configuration).
+   This will build and start all services defined in the docker-compose.yml file.
+4. Access the application:
+   
+   Once all services are up and running, you can access the web application at <http://localhost:3000> (or the port specified in your Docker Compose configuration).
 
 ## Development 💻
 
@@ -82,7 +84,7 @@ To work on individual packages:
     npm start
     ```
 
-Repeat these steps for other packages as needed.
+   Repeat these steps for other packages as needed.
 
 ## Usage 🏃
 

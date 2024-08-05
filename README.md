@@ -1,69 +1,115 @@
 # C8-Tasklist-Farsi
 
-![Logo](public/c8tf-logo.png)
+![Logo](./packages/taskapp-web/public/c8tf-logo.png)
 
-This project is a custom implementation of a task list application for Camunda 8, with support for the Persian (Farsi) language. It provides a web interface for managing tasks and processes, integrating with Camunda 8's Zeebe engine.
+C8-Tasklist-Farsi is a custom implementation of a task list application for Camunda 8, with support for Right-to-Left (RTL) languages, specifically Persian (Farsi). It provides a web interface for managing tasks and processes, integrating with Camunda 8's Zeebe engine.
 
-## Project Structure
+**Disclaimer:** This project is not officially affiliated with or endorsed by Camunda. It is an independent, community-driven project designed to work with Camunda 8 components.
 
-The project consists of several components:
+## Project Structure 🏗️
+
+This project is structured as a monorepo containing the following components:
 
 - `taskapp-web`: React frontend for the task application
 - `zeebe-backend`: Node.js backend for interfacing with Zeebe
-- `processDefinitionsServer`: Server for managing process definitions
-- `tasksServer`: Server for handling tasks
+- `processes-server`: Server for managing process definitions
+- `tasks-server`: Server for handling tasks
 - `keycloak-proxy`: Proxy for Keycloak authentication
 
-## Features
+## Features ✨
 
 - View and manage tasks
 - Start and interact with process instances
 - View process definitions
-- Persian (Farsi) language support
+- Right-to-Left (RTL) and Persian (Farsi) language support
 - Integration with Camunda 8 (Zeebe)
 - Authentication using Keycloak
 
-## Setup and Installation
+## Prerequisites 🔧
+
+- Node.js (version specified in each package's Dockerfile)
+- Docker and Docker Compose
+- Camunda 8 Platform (==Self-Managed==)
+- Keycloak Server (Installed along with a Camunda 8 Self-Managed deployment)
+
+## Setup and Installation 🚀
 
 1. Clone the repository:
 
+   ```bash
+   git clone https://github.com/okaeiz/C8-Tasklist-Farsi.git
+   cd C8-Tasklist-Farsi
+   ```
+
+2. Create `.env` files:
+   Create a `.env` file in each package directory (`packages/taskapp-web`, `packages/zeebe-backend`, etc.) and populate them with the necessary environment variables. Refer to `.env.example` files in each component for required variables.
+   <br />
+3. Build and start the services using Docker Compose:
+
 ```bash
-git clone https://github.com/okaeiz/C8-Tasklist-Farsi.git
+docker-compose build
+docker-compose up -d
 ```
 
-3. Install dependencies for each component:
+This will build and start all services defined in the docker-compose.yml file.
+<br /> 4. Access the application:
+Once all services are up and running, you can access the web application at http://localhost:3000 (or the port specified in your Docker Compose configuration).
+
+## Development 💻
+
+To work on individual packages:
+
+1. Navigate to the package directory:
 
 ```bash
-cd taskapp-web && npm install
-cd ../zeebe-backend && npm install
-cd ../processDefinitionsServer && npm install
-cd ../tasksServer && npm install
-cd ../keycloak-proxy && npm install
+cd packages/taskapp-web
 ```
 
-5. Set up environment variables (refer to `.env.example` files in each component)
+2. Install dependencies:
 
-6. Start the services:
+```bash
+npm install
+```
 
-- Run each service in a separate terminal, or
-- Use a tool like `concurrently` to run multiple services
+3. Start the development server:
 
-## Usage
+```bash
+npm start
+```
 
-The project is still in development. You may struggle firing it up. This status will be updated.
+Repeat these steps for other packages as needed.
 
-## Contributing
+## Usage 🏃
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+The project is currently in development. Users may encounter issues when attempting to run the application. This section will be updated as the project progresses.
 
-## License
+## Contributing 💁‍♂️
+
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+## License ⚖
 
 [Add license information]
 
-## Acknowledgements
+## Acknowledgements 🤝
 
 - Camunda 8
-- Zeebe
 - React
 - Node.js
 - Keycloak
+
+## Troubleshooting 🔎
+
+If you encounter CORS issues or other connection problems, ensure that:
+All necessary environment variables are correctly set in the .env files.
+The Docker network is correctly configured in docker-compose.yml.
+Keycloak is properly configured for your application.
+For more detailed troubleshooting, please refer to the logs of individual services:
+
+```bash
+docker-compose logs [service-name]
+```
+
+## Contact
+
+Since this project is currently in the early stages of development, you may (and will) encounter issues. For any queries or support, please open an issue in the GitHub repository.

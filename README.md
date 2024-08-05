@@ -87,9 +87,19 @@ The project is currently in development. Users may encounter issues when attempt
 
 Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
 
-## License ⚖
+## 📄 License
 
-[Add license information]
+This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
+
+### Important Notice for Business Use
+
+This software is licensed under AGPL-3.0, which places significant restrictions on its use, modification, and distribution, especially in a business context. Key points to consider:
+
+- If you modify this software, you must make your modifications available under the AGPL-3.0 license.
+- If you distribute this software or a modified version, you must provide the complete source code to recipients.
+- If you run a modified version of this software on a server and allow users to interact with it remotely over a network, you must also make the complete source code available to those users.
+
+Before using this software in a business context, carefully review the full license terms and consider seeking legal advice to understand the implications for your specific use case.
 
 ## Acknowledgements 🤝
 

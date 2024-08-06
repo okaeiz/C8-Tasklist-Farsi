@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { withTranslation } from "react-i18next";
 import { Grid, Card, Box, TextField, Typography, Button } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import LockIcon from "@mui/icons-material/Lock";
 import { styled } from "@mui/material/styles";
 import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/c8tf-logo.png";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { motion } from "framer-motion";
 
 const PassRecovery = ({ t, setAuthenticated }) => {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -60,10 +61,22 @@ const PassRecovery = ({ t, setAuthenticated }) => {
 
   return (
     <Grid container justifyContent="center">
-      <Box sx={{ mt: 8, width: "100%" }}>
+      <motion.Box
+        style={{ marginTop: 64, width: "100%" }}
+        // sx={{ mt: 8, width: "100%" }}
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <img src={logo} alt="Logo" style={{ mt: 8, width: "80px" }} />
-      </Box>
-      <Box sx={{ mt: 8, width: "100%" }}>
+      </motion.Box>
+      <motion.Box
+        style={{ marginTop: 64, width: "100%" }}
+        // sx={{ mt: 8, width: "100%" }}
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <Card
           sx={{
             padding: 4,
@@ -89,7 +102,7 @@ const PassRecovery = ({ t, setAuthenticated }) => {
               padding: 2,
             }}
           >
-            <AccountCircle sx={{ color: "action.active", ml: 2 }} />
+            <AccountCircle sx={{ color: "secondary", ml: 2 }} />
             <TextField
               id="email"
               label={t("recovery.email")}
@@ -141,12 +154,14 @@ const PassRecovery = ({ t, setAuthenticated }) => {
               color="secondary"
               sx={{ fontFamily: "Vazirmatn" }}
               onClick={handleBack}
+              endIcon={<ArrowBackIosIcon />}
             >
               {t("recovery.back")}
             </Button>
             <Button
               variant="contained"
-              color="primary"
+              color="success"
+              size="large"
               sx={{ fontFamily: "Vazirmatn" }}
               onClick={handleRecovery}
             >
@@ -155,7 +170,7 @@ const PassRecovery = ({ t, setAuthenticated }) => {
           </Box>
           {error && <Typography color="error">{error}</Typography>}
         </Card>
-      </Box>
+      </motion.Box>
     </Grid>
   );
 };

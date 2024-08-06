@@ -8,6 +8,7 @@ import axios from "axios";
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/c8tf-logo.png";
+import { motion } from "framer-motion";
 
 const Login = ({ t, setAuthenticated }) => {
   // const [authenticated, setAuthenticated] = useState(false);
@@ -62,10 +63,20 @@ const Login = ({ t, setAuthenticated }) => {
 
   return (
     <Grid container justifyContent="center">
-      <Box sx={{ mt: 8, width: "100%" }}>
+      <motion.Box
+        style={{ marginTop: 64, width: "100%" }}
+        initial={{ y: -10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
         <img src={logo} alt="Logo" style={{ mt: 8, width: "80px" }} />
-      </Box>
-      <Box sx={{ mt: 8, width: "100%" }}>
+      </motion.Box>
+      <motion.Box
+        style={{ marginTop: 64, width: "100%" }}
+        initial={{ y: -5, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+      >
         <Card
           sx={{
             padding: 4,
@@ -172,7 +183,7 @@ const Login = ({ t, setAuthenticated }) => {
           </Box>
           {error && <Typography color="error">{error}</Typography>}
         </Card>
-      </Box>
+      </motion.Box>
     </Grid>
   );
 };

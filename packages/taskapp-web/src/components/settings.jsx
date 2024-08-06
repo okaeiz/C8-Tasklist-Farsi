@@ -3,6 +3,8 @@ import { withTranslation } from "react-i18next";
 import { Button, Typography } from "@mui/material";
 import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
+import { motion } from "framer-motion";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 
 class Settings extends Component {
   handleChangeLanguage = (lng) => {

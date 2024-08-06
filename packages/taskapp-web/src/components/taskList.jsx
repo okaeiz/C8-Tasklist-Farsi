@@ -42,7 +42,11 @@ const TaskList = () => {
             // <StyledCard>
             <StyledListItem key={task.id}>
               <ListItemText primary={task.name} secondary={task.id} />
-              <Button variant="contained" style={{ margin: 20 }}>
+              <Button
+                variant="contained"
+                style={{ margin: 20 }}
+                color="secondary"
+              >
                 Start Task
               </Button>
             </StyledListItem>

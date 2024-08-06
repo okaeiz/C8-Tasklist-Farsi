@@ -41,6 +41,14 @@
     "submit": "Submit",
     "forgot": "FORGOT PASSWORD"
   },
+  "recovery": {
+    "title": "Password Recovery",
+    "email": "Email",
+    "submit": "Submit",
+    "back": "Back",
+    "helper": "Enter the email using which you verified your account.",
+    "contactAdmin": "If your account is not verified with an email, contact the system administrator to retrieve your password."
+  },
   "settings": {
     "title": "Settings",
     "interfaceLanguage": "Interface Language",

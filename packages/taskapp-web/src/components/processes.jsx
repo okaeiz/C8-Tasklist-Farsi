@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { withTranslation } from "react-i18next";
-import { Typography, Container, Card, CardContent, Stack } from "@mui/material";
+import { Typography, Container, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import ProcessList from "./processList";
 
@@ -9,9 +9,6 @@ class Processes extends Component {
     const { t } = this.props;
     return (
       <StyledContainer fixed>
-        {/* <Card className="mb-3"></Card>
-        <Card className="mb-3">
-          <CardContent> */}
         <Stack>
           <StyledTypography variant="h4">
             {t("processes.title")}
@@ -19,11 +16,8 @@ class Processes extends Component {
           <br />
           <StyledTypography>{t("processes.description")}</StyledTypography>
         </Stack>
-        {/* </CardContent>
-        </Card>
-        <Card> */}
+
         <ProcessList />
-        {/* </Card> */}
       </StyledContainer>
     );
   }

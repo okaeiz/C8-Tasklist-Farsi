@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withTranslation } from "react-i18next";
 import { useTheme } from "@mui/material/styles";
 import { Box, Tabs, Drawer, IconButton, Divider, Tab } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import MenuIcon from "@mui/icons-material/Menu";
 import TaskIcon from "@mui/icons-material/Task";
 import AccountTreeIcon from "@mui/icons-material/AccountTree";
@@ -15,13 +16,27 @@ import { styled } from "@mui/system";
 
 const drawerWidth = 240;
 
-const Header = ({ t }) => {
+const Header = ({ authenticated, setAuthenticated }) => {
   const theme = useTheme();
-  const [value, setValue] = React.useState("zero");
+  const location = useLocation();
+  const navigate = useNavigate();
+  // const [value, setValue] = React.useState("zero");
   const [open, setOpen] = React.useState(false);
+  const [value, setValue] = useState(location.pathname);
+
+  useEffect(() => {
+    setValue(location.pathname);
+  }, [location]);
 
   const handleChange = (event, newValue) => {
+    console.log("New value:", newValue);
     setValue(newValue);
+    navigate(newValue);
+  };
+
+  const handleLogout = () => {
+    setAuthenticated(false);
+    navigate("/login");
   };
 
   const handleDrawerOpen = () => {
@@ -46,13 +61,13 @@ const Header = ({ t }) => {
           scrollButtons={true}
         >
           <StyledTab
-            value="zero"
+            value="/home"
             icon={<MenuIcon />}
             iconPosition="bottom"
             onClick={handleDrawerOpen}
           />
           <StyledTab
-            value="one"
+            value="/tasks"
             icon={<TaskIcon />}
             iconPosition="start"
             component={Link}
@@ -60,14 +75,14 @@ const Header = ({ t }) => {
             sx={{ color: "pink[500]" }}
           />
           <StyledTab
-            value="two"
+            value="/processes"
             icon={<AccountTreeIcon />}
             iconPosition="start"
             component={Link}
             to="/processes"
           />
           <StyledTab
-            value="three"
+            value="/info"
             icon={<InfoIcon />}
             iconPosition="bottom"
             component={Link}
@@ -75,7 +90,7 @@ const Header = ({ t }) => {
           />
           <StyledTab
             className="navbar-tab"
-            value="four"
+            value="/settings"
             icon={<SettingsIcon />}
             iconPosition="bottom"
             component={Link}

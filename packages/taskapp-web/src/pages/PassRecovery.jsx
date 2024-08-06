@@ -9,20 +9,18 @@ import qs from "qs";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/c8tf-logo.png";
 
-const Login = ({ t, setAuthenticated }) => {
+const PassRecovery = ({ t, setAuthenticated }) => {
   // const [authenticated, setAuthenticated] = useState(false);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleLogin = async () => {
+  const handleRecovery = async () => {
     const data = qs.stringify({
       grant_type: process.env.REACT_APP_GRANT_TYPE,
       client_id: process.env.REACT_APP_CLIENT_ID,
       client_secret: process.env.REACT_APP_CLIENT_SECRET,
-      username: username,
-      password: password,
+      email: email,
     });
 
     const config = {
@@ -56,8 +54,8 @@ const Login = ({ t, setAuthenticated }) => {
     }
   };
 
-  const handleForget = () => {
-    navigate("/recovery");
+  const handleBack = () => {
+    navigate("/login");
   };
 
   return (
@@ -80,7 +78,7 @@ const Login = ({ t, setAuthenticated }) => {
           }}
         >
           <StyledTypography variant="h6" gutterBottom>
-            {t("login.title")}
+            {t("recovery.title")}
           </StyledTypography>
           <Box
             sx={{
@@ -93,9 +91,10 @@ const Login = ({ t, setAuthenticated }) => {
           >
             <AccountCircle sx={{ color: "action.active", ml: 2 }} />
             <TextField
-              id="username"
-              label={t("login.username")}
+              id="email"
+              label={t("recovery.email")}
               variant="standard"
+              helperText={t("recovery.helper")}
               InputProps={{
                 style: {
                   fontFamily: "Vazirmatn",
@@ -109,9 +108,16 @@ const Login = ({ t, setAuthenticated }) => {
                   textAlign: "right",
                 },
               }}
+              FormHelperTextProps={{
+                style: {
+                  fontFamily: "Vazirmatn",
+                  direction: "rtl",
+                  textAlign: "right",
+                },
+              }}
               sx={{ flex: 1 }}
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </Box>
           <Box
@@ -121,31 +127,7 @@ const Login = ({ t, setAuthenticated }) => {
               width: "100%",
               padding: 2,
             }}
-          >
-            <LockIcon sx={{ color: "action.active", ml: 2 }} />
-            <TextField
-              id="password"
-              label={t("login.password")}
-              type="password"
-              variant="standard"
-              InputProps={{
-                style: {
-                  fontFamily: "Vazirmatn",
-                  direction: "ltr",
-                },
-              }}
-              InputLabelProps={{
-                style: {
-                  fontFamily: "Vazirmatn",
-                  direction: "rtl",
-                  textAlign: "right",
-                },
-              }}
-              sx={{ flex: 1 }}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </Box>
+          ></Box>
           <Box
             sx={{
               display: "flex",
@@ -155,19 +137,20 @@ const Login = ({ t, setAuthenticated }) => {
             }}
           >
             <Button
-              variant="text"
+              variant="outlined"
+              color="secondary"
               sx={{ fontFamily: "Vazirmatn" }}
-              onClick={handleForget}
+              onClick={handleBack}
             >
-              {t("login.forgot")}
+              {t("recovery.back")}
             </Button>
             <Button
               variant="contained"
               color="primary"
               sx={{ fontFamily: "Vazirmatn" }}
-              onClick={handleLogin}
+              onClick={handleRecovery}
             >
-              {t("login.submit")}
+              {t("recovery.submit")}
             </Button>
           </Box>
           {error && <Typography color="error">{error}</Typography>}
@@ -177,7 +160,7 @@ const Login = ({ t, setAuthenticated }) => {
   );
 };
 
-export default withTranslation()(Login);
+export default withTranslation()(PassRecovery);
 
 const StyledTypography = styled(Typography)({
   fontFamily: "Vazirmatn",

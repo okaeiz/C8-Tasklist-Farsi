@@ -60,6 +60,7 @@ const ProcessList = () => {
                 variant="contained"
                 onClick={() => handleStartProcess(process.bpmnProcessId)}
                 style={{ margin: 20 }}
+                color="secondary"
               >
                 Start Process
               </Button>
